@@ -1,4 +1,6 @@
-import Result from "./accordian/accordian"
+// import Result from "./accordian/accordian"
+import Theme from "./Theme/Theme"
+
 
 
 function App() {
@@ -6,7 +8,11 @@ function App() {
 
   return (
     <>
-      <Result />
+      {/* <Result /> */}
+      {/* <ThemeProvider> */}
+      {/* <ThemeButton /> */}
+      {/* </ThemeProvider> */}
+      <Theme />
     </>
   )
 }
