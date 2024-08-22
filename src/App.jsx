@@ -1,5 +1,6 @@
 // import Result from "./accordian/accordian"
 import Theme from "./Theme/Theme"
+import Todolist from "./Todolist/Todolist"
 
 
 
@@ -12,7 +13,8 @@ function App() {
       {/* <ThemeProvider> */}
       {/* <ThemeButton /> */}
       {/* </ThemeProvider> */}
-      <Theme />
+      {/* <Theme /> */}
+      <Todolist />
     </>
   )
 }
