@@ -1,54 +1,66 @@
+import { useState } from "react"
 
-import { useState } from "react";
 
 const Todolist = () => {
-  const [todos, setTodos] = useState([]);
-  const [input, setInput] = useState("");
+const [todos,  setTodos] = useState([])
+const [input, setInput] = useState('')
 
 
-  const addTodo = () => {
-    if(input.trim()) {
-        setTodos([...todos, { text : input,  completed : false}])
-        setInput('')
 
-    }
+
+const addTodo = () => {
+  if(input.trim()) {
+    setTodos([...todos, { text : input , completed : false}])
+    setInput('')
   }
+}
 
-  const togglecompelete = (index) => {
-    const newtodos = [...todos];
-    newtodos[index].completed =  !newtodos[index].completed;
-    setTodos(newtodos)
-  }
+const toggleComplete = (index) => {
+  
+const newTodos = [...todos] 
+newTodos[index].completed = !newTodos[index].completed
 
-  const deleteTodo =(index,e) => {
-    e.stopPropagation();
-    const newtodos =  todos.filter((_, i) =>  i !== index);
-    setTodos(newtodos);
-  }
+setTodos(newTodos)  
+}
+
+const deletetodo = (index, e) => {
+  e.stopPropagation()
+  const newTodos = todos.filter((_,i) => i !== index) 
+  setTodos(newTodos)
+}
+
   return (
     <div>
-      <h1> To-Do List </h1>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Add a new Task"
-      />
-      <button onClick={addTodo}>Add</button>
-      <ul style={{ padding : '0', listStyle:'none'  }}>
-           {
-            todos.map((todo, index) => (
-                <li key={index} style={{ textDecoration :  todo.completed? 'line-through' : 'none',  cursor : 'pointer'  }}  onClick={ () => togglecompelete(index)}>{todo.text}
-                <button onClick={(e) => deleteTodo(index,e)} style={{ marginLeft: '10px'}}>Delete </button>
-
-                </li>
+        Todo List 
+      <div>
+        <input 
+         type="text"
+         value={input}
+         placeholder="Add  Todo Item"
+         onChange={(e) =>  setInput(e.target.value)}
+        
+          />
+          <button onClick={addTodo}>Add todo</button>
+          <ul>
+            {
+              todos.map((todo, index) => (
+                <li key={index} 
+                 style={{ 
+                    textDecoration :  todo.completed ? 'line-through' : 'none',
+                    cursor : 'pointer'
+                 }}
                 
-            ))
-           }
+                
+                 onClick={(e) =>  toggleComplete(index,e)}>{todo.text}
 
-      </ul>
+                  <button onClick={(e) => deletetodo(index, e)}>Delete</button>
+                 </li>
+              ))
+            }
+          </ul>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default Todolist;
+export default Todolist
