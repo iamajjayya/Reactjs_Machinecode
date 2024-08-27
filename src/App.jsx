@@ -2,9 +2,11 @@
 import Faq from "./accordian/Faq"
 import Theme from "./Theme/Theme"
 import Todolist from "./Todolist/Todolist"
-
-
-
+import UseState from  "./Hooks/UseState"
+import DataFetch from "./Hooks/UseEffect"
+import TextInputFocus  from './Hooks/UseRef'
+import FilterlistComponent from "./Hooks/UseMemo"
+import ParentCompent from './Hooks/UseCallback'
 function App() {
 
 
@@ -16,7 +18,13 @@ function App() {
       {/* </ThemeProvider> */}
       {/* <Theme /> */}
       {/* <Todolist /> */}
-      <Faq />
+      {/* <Faq /> */}
+      {/* <UseState /> */}
+      {/* <DataFetch /> */}
+      {/* < TextInputFocus /> */}
+      {/* <FilterlistComponent /> */}
+      <ParentCompent />
+      
     </>
   )
 }
