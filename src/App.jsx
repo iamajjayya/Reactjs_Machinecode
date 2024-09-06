@@ -7,6 +7,10 @@ import DataFetch from "./Hooks/UseEffect"
 import TextInputFocus  from './Hooks/UseRef'
 import FilterlistComponent from "./Hooks/UseMemo"
 import ParentCompent from './Hooks/UseCallback'
+import UserProvider from "./Context/Usercontext"
+import UserInfo from "./Context/UserInfo"
+import Alteruserinfo from "./Context/Alteruserinfo"
+
 function App() {
 
 
@@ -23,8 +27,13 @@ function App() {
       {/* <DataFetch /> */}
       {/* < TextInputFocus /> */}
       {/* <FilterlistComponent /> */}
-      <ParentCompent />
-      
+      {/* <ParentCompent /> */}
+      <UserProvider>
+        <h1> Root Component  </h1>
+        <UserInfo />
+        <Alteruserinfo />
+      </UserProvider>
+     
     </>
   )
 }
